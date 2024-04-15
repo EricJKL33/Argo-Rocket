@@ -1,17 +1,14 @@
 // Importation des modules nécessaires
-import express from "express";
-import { connect } from "mongoose";
-import authRoutes from "./routes/auth.js";
-import rocketRoutes from "./routes/rocket.js";
+const express = require("express");
+const mongoose = require("mongoose");
+const authRoutes = require("./routes/auth.js");
+const rocketRoutes = require("./routes/rocket.js");
 
 // Création de l'application Express
 const app = express();
 
 // Configuration de MongoDB
-connect("mongodb://localhost:27017/spacex", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect("mongodb://localhost:27017/rockets")
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB", err));
 

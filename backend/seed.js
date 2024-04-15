@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
 const Rocket = require("./models/Rocket");
 
-mongoose.connect("mongodb://localhost/your_database", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect("mongodb://localhost:27017/rockets");
 
 const rockets = [
   {
@@ -18,7 +15,7 @@ const rockets = [
   },
   {
     name: "Falcon 9",
-    active: true,
+    active: false,
     firstFlight: new Date("2010-06-04"),
     country: "United States",
     description:
@@ -45,20 +42,67 @@ const rockets = [
   },
   {
     name: "Dragon",
-    active: true,
+    active: false,
     firstFlight: new Date("2010-12-08"),
     country: "United States",
     description:
       "Dragon is a free-flying spacecraft designed to deliver both cargo and people to orbiting destinations. Dragon made history in 2012 when it became the first commercial spacecraft in history to deliver cargo to the International Space Station and safely return cargo to Earth, a feat previously achieved only by governments.",
     coverUrl: "https://example.com/dragon.jpg",
   },
+  {
+    name: "Atlas V",
+    active: true,
+    firstFlight: new Date("2002-08-21"),
+    country: "United States",
+    description:
+      "Atlas V is an expendable launch system and the fifth major version in the Atlas rocket family. It is manufactured by ULA, a partnership between Lockheed Martin and Boeing.",
+    coverUrl: "https://example.com/atlasv.jpg",
+  },
+  {
+    name: "Delta IV",
+    active: true,
+    firstFlight: new Date("2002-11-20"),
+    country: "United States",
+    description:
+      "Delta IV is an expendable launch system in the Delta rocket family. The rocket's main components are designed by Boeing's Defense, Space & Security division and built in the United Launch Alliance (ULA) facility in Decatur, Alabama.",
+    coverUrl: "https://example.com/deltaiv.jpg",
+  },
+  {
+    name: "Ariane 5",
+    active: false,
+    firstFlight: new Date("1996-06-04"),
+    country: "European Union",
+    description:
+      "Ariane 5 is a European heavy-lift launch vehicle that is part of the Ariane rocket family, an expendable launch system designed by the Centre national d'études spatiales (CNES).",
+    coverUrl: "https://example.com/ariane5.jpg",
+  },
+  {
+    name: "Proton-M",
+    active: true,
+    firstFlight: new Date("2001-04-07"),
+    country: "Russia",
+    description:
+      "The Proton-M, (Протон-М) GRAU index 8K82M or 8K82KM, is a Russian heavy-lift launch vehicle derived from the Soviet-developed Proton. It is built by Khrunichev, and launched from sites 81 and 200 at the Baikonur Cosmodrome in Kazakhstan.",
+    coverUrl: "https://example.com/protonm.jpg",
+  },
+  {
+    name: "H-IIA",
+    active: false,
+    firstFlight: new Date("2001-08-29"),
+    country: "Japan",
+    description:
+      "H-IIA (H2A) is an active expendable launch system operated by Mitsubishi Heavy Industries (MHI) for the Japan Aerospace Exploration Agency. The liquid-fueled H-IIA rockets have been used to launch satellites into geostationary orbit, to launch a lunar orbiting spacecraft, and to launch Akatsuki, which studied Venus.",
+    coverUrl: "https://example.com/h2a.jpg",
+  },
 ];
 
-Rocket.insertMany(rockets)
-  .then(() => {
-    console.log("Data seeding successful");
+mongoose.connection.once('open', async () => {
+  try {
+    await Rocket.insertMany(rockets);
+    console.log('Rockets data has been inserted');
+  } catch (error) {
+    console.error('Error inserting data: ', error);
+  } finally {
     mongoose.connection.close();
-  })
-  .catch((error) => {
-    console.error("Data seeding error: ", error);
-  });
+  }
+});

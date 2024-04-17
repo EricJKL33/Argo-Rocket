@@ -1,17 +1,17 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import RocketList from './components/RocketList.vue';
-import SignIn from './components/SingIn.vue';
+import { createRouter, createWebHistory } from "vue-router";
+import RocketList from "./components/RocketList/RocketList.vue";
+import SignIn from "./components/Signin/SignIn.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: RocketList,
+    path: "/",
+    name: "signin",
+    component: SignIn,
   },
   {
-    path: '/signin',
-    name: 'signin',
-    component: SignIn,
+    path: "/rockets",
+    name: "home",
+    component: RocketList,
   },
 ];
 

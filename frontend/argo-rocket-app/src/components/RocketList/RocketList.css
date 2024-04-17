@@ -1,0 +1,24 @@
+/* RocketList.css */
+
+.rocket-list-ctn{
+  & h2 {
+    color: blue;
+  }
+  
+  img {
+    width: 200px;
+    height: auto;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    margin-bottom: 20px;
+  }
+}

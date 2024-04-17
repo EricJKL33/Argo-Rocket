@@ -6,6 +6,12 @@ const rocketRoutes = require("./routes/rocket.js");
 
 // Création de l'application Express
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:8080' // Remplacez par l'origine de votre application frontend
+}));
 
 // Configuration de MongoDB
 mongoose.connect("mongodb://localhost:27017/rockets")

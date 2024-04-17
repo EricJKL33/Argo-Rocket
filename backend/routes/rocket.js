@@ -3,7 +3,12 @@ const router = express.Router();
 const Rocket = require('../models/Rocket');
 
 router.get('/', async (req, res) => {
-  // Ici, vous récupérerez la liste des fusées de la base de données et les renverrez
+  try {
+    const rockets = await Rocket.find();
+    res.json(rockets);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
 module.exports = router;

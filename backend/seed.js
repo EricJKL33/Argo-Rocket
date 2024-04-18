@@ -48,7 +48,7 @@ const rockets = [
     description:
       "Tintin's rocket is a fictional rocket featured in the comic book series The Adventures of Tintin by Hergé.",
     coverUrl:
-      "https://pixabay.com/illustrations/search-enginehttps://i.etsystatic.com/25590692/r/il/c91c3c/2976566845/il_fullxfull.2976566845_r56t.jpg-optimization-seo-586422/",
+      "https://laurafrancoismartinemile.files.wordpress.com/2013/01/hommage-a-josette-baujot-la-coloriste-de-tintin-01.jpg",
   },
   {
     name: "Starship",

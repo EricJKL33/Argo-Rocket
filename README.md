@@ -1,31 +1,28 @@
 # Argo Rocket
 
+## Prerequisites
 
-## Prérequis
-
-- Node.js et npm installés sur votre machine
-- MongoDB installé et en cours d'exécution sur votre machine
+- Node.js and npm installed on your machine
+- MongoDB installed and running on your machine
 
 ## Installation
 
-1. Clonez ce dépôt sur votre machine locale en utilisant `git clone https://github.com/EricJKL33/Argo-Rocket.git`.
-2. Naviguez jusqu'au répertoire du projet avec `cd argo-rocket`.
-3. Installez les dépendances du avec `npm run install-all`.
-
+1. Clone this repository on your local machine using `git clone https://github.com/EricJKL33/Argo-Rocket.git`.
+2. Navigate to the project directory with `cd argo-rocket`.
+3. Install the dependencies with `npm run install-all`.
 
 ## Configuration
 
-1. Dans le répertoire `backend`, renommez le fichier `.env.example` en `.env`.
-2. Ouvrez le fichier `.env` et remplacez `your-secret-key`, `your-front-localhost`, et `your-mongodb-url` par vos propres valeurs.
+1. In the `backend` directory, rename the `.env.example` file to `.env`.
+2. Open the `.env` file and replace `your-secret-key`, `your-front-localhost`, and `your-mongodb-url` with your own values.
 
-## Peuplement de la base de données
+## Populating the Database
 
-1. Assurez-vous que MongoDB est en cours d'exécution.
-2. Dans le répertoire `backend`, exécutez `node seed.js` pour CREE  et peupler la base de données.
+1. Make sure MongoDB is running.
+2. In the `backend` directory, run `node seed.js` to create and populate the database.
 
-## Démarrage de l'application
+## Starting the Application
 
-1. Dans le répertoire `argo-rocket` démarrez l'application avec `npm start`.
+1. In the `argo-rocket` directory, start the application with `npm start`.
 
-
-Votre application devrait maintenant être en cours d'exécution à l'adresse indiquée dans le terminal.
+Your application should now be running at the address indicated in the terminal.

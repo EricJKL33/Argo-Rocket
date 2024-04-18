@@ -7,7 +7,7 @@
     <div v-else>
       <h1>Rockets List</h1>
       <button class="toggle-btn" @click="toggleRocketView">
-        {{ showActiveOnly ? "SHOW ALL ROCKET" : "SHOW ONLY ACTIVE ROCKET" }}
+        {{ showActiveOnly ? "SHOW ALL ROCKETS" : "SHOW ONLY ACTIVE ROCKETS" }}
       </button>
       <div class="rocket-list">
         <carousel :items-to-show="1">

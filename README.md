@@ -21,7 +21,7 @@
 ## Peuplement de la base de données
 
 1. Assurez-vous que MongoDB est en cours d'exécution.
-2. Dans le répertoire `backend`, exécutez `node seed.js` pour peupler la base de données.
+2. Dans le répertoire `backend`, exécutez `node seed.js` pour CREE  et peupler la base de données.
 
 ## Démarrage de l'application
 

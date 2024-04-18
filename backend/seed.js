@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 const Rocket = require("./models/Rocket");
 const User = require("./models/User");

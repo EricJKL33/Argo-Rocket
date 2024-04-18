@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const mongoose = require("mongoose");
 const Rocket = require("./models/Rocket");
 const User = require("./models/User");
@@ -42,6 +42,16 @@ const rockets = [
     coverUrl: "https://cdn.wcnews.com/newestshots/full/falcon_heavy1.jpg",
   },
   {
+    name: "Tintin's Rocket",
+    active: true,
+    firstFlight: new Date("1950-01-01"),
+    country: "Belgium",
+    description:
+      "Tintin's rocket is a fictional rocket featured in the comic book series The Adventures of Tintin by Hergé.",
+    coverUrl:
+      "https://pixabay.com/illustrations/search-enginehttps://i.etsystatic.com/25590692/r/il/c91c3c/2976566845/il_fullxfull.2976566845_r56t.jpg-optimization-seo-586422/",
+  },
+  {
     name: "Starship",
     active: true,
     firstFlight: new Date("2020-08-04"),
@@ -79,7 +89,7 @@ const rockets = [
     description:
       "Delta IV is an expendable launch system in the Delta rocket family. The rocket's main components are designed by Boeing's Defense, Space & Security division and built in the United Launch Alliance (ULA) facility in Decatur, Alabama.",
     coverUrl:
-      "https://en.wikipedia.org/wiki/Delta_IV_Heavy#/media/File:Delta_IV_Heavy_on_pad_with_Orion_EFT-1_(KSC-2014-4686).jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/NROL-71_Wide_%28cropped_alt%29.jpg",
   },
   {
     name: "Ariane 5",
@@ -100,6 +110,16 @@ const rockets = [
       "The Proton-M, (Протон-М) GRAU index 8K82M or 8K82KM, is a Russian heavy-lift launch vehicle derived from the Soviet-developed Proton. It is built by Khrunichev, and launched from sites 81 and 200 at the Baikonur Cosmodrome in Kazakhstan.",
     coverUrl:
       "https://upload.wikimedia.org/wikipedia/commons/2/2a/At_the_Launch_Pad%2C_Proton-M.jpg",
+  },
+  {
+    name: "Buzz Lightyear's Rocket",
+    active: true,
+    firstFlight: new Date("1995-11-22"),
+    country: "United States",
+    description:
+      "Buzz Lightyear's rocket is a fictional rocket from the Toy Story franchise by PixarThis rocket can allow you to go to infinity and beyond!!",
+    coverUrl:
+      "https://japan-figure.com/cdn/shop/products/Dream-Tomica-Ride-On-Toy-Story-Buzz-Lightyear-Spaceship-Case-Japan-Figure-4904810134053-0.jpg?v=1646725674",
   },
   {
     name: "H-IIA",

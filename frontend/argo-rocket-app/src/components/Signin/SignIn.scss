@@ -45,17 +45,12 @@
   margin: 80px 10px auto;
   padding: 20px;
 
-  h2 {
-    font-family: "Kalam", cursive;
-    font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
+
 
   input {
     width: 250px;
     padding: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     border: none;
     border-bottom: 1px solid #f5f5f5;
     background: transparent;
@@ -96,7 +91,7 @@
 
 .input-wrapper:focus-within label {
   transform: translateY(-20px);
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 .signin-form input::placeholder {
@@ -105,7 +100,7 @@
 
 .has-value {
   transform: translateY(-20px);
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 .input-icon {

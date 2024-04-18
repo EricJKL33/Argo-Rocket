@@ -6,7 +6,6 @@
       <p>From the microscopic world to the cosmos</p>
     </div>
     <form class="signin-form" @submit.prevent="handleSubmit">
-      <h2>Login</h2>
       <div class="input-wrapper">
         <UserIcon class="input-icon" :class="{ 'hide-icon': username }" />
         <label :class="{ 'has-value': username }" for="username"
@@ -30,6 +29,8 @@
 import api from "../../service/api";
 import "./SignIn.scss";
 import { User, Lock } from "lucide-vue-next";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 
 export default {
   components: {
@@ -47,14 +48,22 @@ export default {
       try {
         const response = await api.postUser(this.username, this.password);
         if (response.status === 200) {
-          this.$router.push("/rockets");
+          toast("To Infinity and Beyond 🚀", {
+            theme: "dark",
+            autoClose: 3000,
+          });
+          setTimeout(() => {
+            this.$router.push("/rockets");
+          }, 3000);
         }
       } catch (error) {
         console.error("An error occurred:", error);
-        // Handle error here
-        // For example, you might show an error message:
-        alert(
-          "Login failed. Please check your username and password and try again."
+        toast(
+          "Login failed. Please check your username and password and try again.",
+          {
+            theme: "dark",
+            autoClose: 4000,
+          }
         );
       }
     },

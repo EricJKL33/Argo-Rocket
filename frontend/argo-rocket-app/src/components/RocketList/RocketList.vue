@@ -10,7 +10,6 @@
         {{ showActiveOnly ? "SHOW ALL ROCKET" : "SHOW ONLY ACTIVE ROCKET" }}
       </button>
       <div class="rocket-list">
-        
         <carousel :items-to-show="1">
           <slide v-for="rocket in filteredRockets" :key="rocket.id">
             <div class="rocket-card-ctn">

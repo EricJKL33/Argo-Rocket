@@ -7,7 +7,7 @@ mongoose.connect(`${process.env.MONGODB_URL}/rockets`);
 
 const user = {
   username: "testUser",
-  password: "testPassword", 
+  password: "testPassword",
 };
 
 const rockets = [
@@ -134,7 +134,6 @@ const rockets = [
 
 mongoose.connection.once("open", async () => {
   try {
-
     await User.deleteMany({});
     await Rocket.deleteMany({});
 

@@ -1,31 +1,30 @@
-const mongoose = require('mongoose');
-
+const mongoose = require("mongoose");
 
 const RocketSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    active: {
-        type: Boolean,
-        required: true,
-    },
-    firstFlight: {
-        type: Date,
-        required: true,
-    },
-    country: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true,
-    },
-    coverUrl: {
-        type: String,
-        required: true,
-    },
+  name: {
+    type: String,
+    required: true,
+  },
+  active: {
+    type: Boolean,
+    required: true,
+  },
+  firstFlight: {
+    type: Date,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  coverUrl: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Rocket", RocketSchema);

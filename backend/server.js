@@ -6,15 +6,21 @@ const rocketRoutes = require("./routes/rocket.js");
 
 // Création de l'application Express
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
+
+const corsOrigin = process.env.CORS_ORIGIN;
+const mongoDbUrl = process.env.MONGODB_URL;
 
 app.use(cors());
-app.use(cors({
-  origin: 'http://localhost:8080' // Remplacez par l'origine de votre application frontend
-}));
+app.use(
+  cors({
+    origin: corsOrigin, // Remplacez par l'origine de votre application frontend
+  })
+);
 
 // Configuration de MongoDB
-mongoose.connect("mongodb://localhost:27017/rockets")
+mongoose
+  .connect(`${mongoDbUrl}/rockets`)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB", err));
 
@@ -22,7 +28,6 @@ mongoose.connect("mongodb://localhost:27017/rockets")
 app.use(express.json());
 app.use("/user", authRoutes);
 app.use("/rocket", rocketRoutes);
-
 
 // Démarrage du serveur
 app.listen(3000, () => console.log("Server is running on port 3000"));

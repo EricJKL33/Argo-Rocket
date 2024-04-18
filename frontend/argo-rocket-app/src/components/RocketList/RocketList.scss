@@ -1,0 +1,147 @@
+.rocket-list-page {
+  height: 100vh;
+  background-image: url("../../assets/img/SpaceBg.png");
+  background-size: cover;
+
+  h1 {
+    // font-family: "Kalam", cursive;
+    font-size: 55px;
+    font-weight: 600;
+    margin: 10px 0 30px 0;
+    text-align: center;
+  }
+  .toggle-btn {
+    display: block;
+    width: 360px;
+    margin: 0 auto;
+    padding: 15px 40px;
+    border: 3px solid rgb(144, 144, 144);
+    border-radius: 999px;
+    background: #000;
+    background-image: linear-gradient(
+      to right,
+      transparent 50%,
+      rgb(11, 2, 28) 50%,
+      rgb(62, 30, 117)
+    );
+    background-size: 200%;
+    color: #f5f5f5;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; // Ajouté pour l'animation
+  }
+
+  .toggle-btn:hover {
+    color: #fff;
+    background-position: 100%;
+    border: 3px solid #fff;
+  }
+
+  .toggle-btn:focus {
+    color: #fff; // Couleur lors de la mise au point
+  }
+
+  .rocket-list {
+    .rocket-card-ctn {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      background: transparent;
+      padding: 20px;
+      height: 600px;
+    }
+
+    img {
+      width: 350px;
+      height: 450px;
+      border-radius: 10px;
+    }
+
+    .rocket-info {
+      display: flex;
+      flex-direction: column;
+      width: 430px;
+      margin-right: 30px;
+
+      h2 {
+        margin-bottom: 40px;
+        font-family: "Kalam", cursive;
+        // position: absolute;
+        // top: 20px;
+
+
+      }
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+        font-size: 18px;
+
+        .active {
+          color: green;
+        }
+
+        .inactive {
+          color: red;
+        }
+
+        strong {
+          margin-left: 10px;
+        }
+
+        span {
+          flex: 1;
+          text-align: right;
+        }
+      }
+    }
+
+    .rocket-description {
+      strong {
+        width: 50px;
+      }
+      .description-text {
+        text-align: justify;
+      }
+    }
+
+    .carousel__icon {
+      color: white;
+      font-size: 50px;
+    }
+
+    .carousel__next {
+      width: 100px;
+      margin-right: 20%;
+    }
+    .carousel__prev {
+      width: 100px;
+      margin-left: 20%;
+    }
+
+    .carousel__pagination-button::after {
+      background-color: #d1c5c585;
+    }
+    .carousel__pagination-button--active::after {
+      background-color: white;
+    }
+    .carousel__pagination-button::hover {
+      background-color: white;
+    }
+    .carousel__pagination-button {
+      width: 25px;
+    }
+
+    .carousel__pagination {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      line-height: 0;
+      margin: 10px 0 0;
+      padding: 0;
+  }
+  }
+}

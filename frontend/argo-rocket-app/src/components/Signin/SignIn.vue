@@ -3,7 +3,7 @@
     <div class="logo-ctn">
       <img src="../../assets/img/rocket-logo.png" alt="Logo" />
       <h1>Argo Rocket</h1>
-      <p>From the microscopic to the cosmos</p>
+      <p>From the microscopic world to the cosmos</p>
     </div>
     <form class="signin-form" @submit.prevent="handleSubmit">
       <h2>Login</h2>

@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const Rocket = require("./models/Rocket");
-const User = require('./models/User');
+const User = require("./models/User");
 
-mongoose.connect("mongodb://localhost:27017/rockets");
+mongoose.connect(`${process.env.MONGODB_URL}/rockets`);
 
 const user = {
-  username: 'testUser',
-  password: 'testPassword', // Assurez-vous de hacher ce mot de passe avant de l'insérer dans la base de données
+  username: "testUser",
+  password: "testPassword", // Assurez-vous de hacher ce mot de passe avant de l'insérer dans la base de données
   // autres champs utilisateur ici
 };
 
@@ -78,7 +78,7 @@ const rockets = [
     description:
       "Delta IV is an expendable launch system in the Delta rocket family. The rocket's main components are designed by Boeing's Defense, Space & Security division and built in the United Launch Alliance (ULA) facility in Decatur, Alabama.",
     coverUrl:
-      "https://www.universetoday.com/97710/liftoff-delta-iv-launches-next-generation-gps-satellite/",
+      "https://en.wikipedia.org/wiki/Delta_IV_Heavy#/media/File:Delta_IV_Heavy_on_pad_with_Orion_EFT-1_(KSC-2014-4686).jpg",
   },
   {
     name: "Ariane 5",
@@ -112,17 +112,16 @@ const rockets = [
   },
 ];
 
-User.create(user)
-  .then(() => {
-    console.log('User data has been seeded!');
-  })
-  .catch((error) => {
-    console.log('An error occurred while seeding user data: ', error);
-  });
-
-
 mongoose.connection.once("open", async () => {
   try {
+    // Supprimer tous les documents existants
+    await User.deleteMany({});
+    await Rocket.deleteMany({});
+
+    // Insérer les nouvelles données
+    await User.create(user);
+    console.log("User data has been seeded!");
+
     await Rocket.insertMany(rockets);
     console.log("Rockets data has been inserted");
   } catch (error) {
@@ -131,12 +130,3 @@ mongoose.connection.once("open", async () => {
     mongoose.connection.close();
   }
 });
-
-// Rocket.insertMany(rockets)
-//   .then(() => {
-//     console.log("Data has been seeded!");
-//     mongoose.connection.close();
-//   })
-//   .catch((error) => {
-//     console.log("An error occurred while seeding data: ", error);
-//   });

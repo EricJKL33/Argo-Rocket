@@ -7,8 +7,7 @@ mongoose.connect(`${process.env.MONGODB_URL}/rockets`);
 
 const user = {
   username: "testUser",
-  password: "testPassword", // Assurez-vous de hacher ce mot de passe avant de l'insérer dans la base de données
-  // autres champs utilisateur ici
+  password: "testPassword", 
 };
 
 const rockets = [
@@ -135,11 +134,10 @@ const rockets = [
 
 mongoose.connection.once("open", async () => {
   try {
-    // Supprimer tous les documents existants
+
     await User.deleteMany({});
     await Rocket.deleteMany({});
 
-    // Insérer les nouvelles données
     await User.create(user);
     console.log("User data has been seeded!");
 

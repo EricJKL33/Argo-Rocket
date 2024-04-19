@@ -1,9 +1,7 @@
 <template>
   <div class="rocket-list-page">
     <HeaderComponent />
-    <div v-if="isLoading">
-      <span class="loader"></span>
-    </div>
+    <Loader v-if="isLoading" />
     <div v-else>
       <h1>Rockets List</h1>
       <button class="toggle-btn" @click="toggleRocketView">
@@ -59,11 +57,13 @@ import "vue3-carousel/dist/carousel.css";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import api from "../../service/api.js";
 import HeaderComponent from "../HeaderComponent/HeaderComponent";
+import Loader from "../ui/LoaderComponent/LoaderComponent";
 
 export default {
   name: "RocketList",
   components: {
     HeaderComponent,
+    Loader,
     Carousel,
     Slide,
     Pagination,

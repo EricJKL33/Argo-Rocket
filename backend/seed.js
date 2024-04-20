@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Rocket = require("./models/Rocket");
 const User = require("./models/User");
 
-mongoose.connect(`${process.env.MONGODB_URL}/rockets`);
+mongoose.connect(`${process.env.MONGODB_URL}`);
 
 const user = {
   username: "testUser",

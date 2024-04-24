@@ -1,12 +1,16 @@
+
 .signin-ctn {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
+
   background-image: url("../../assets/img/LoginBg.png");
+  overflow:auto;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -45,8 +49,6 @@
   margin: 80px 10px auto;
   padding: 20px;
 
-
-
   input {
     width: 250px;
     padding: 5px;
@@ -83,7 +85,7 @@
   label {
     position: absolute;
     left: 5px;
-    top: 4px;
+    top: 2px;
     transition: 0.3s;
     pointer-events: none;
   }

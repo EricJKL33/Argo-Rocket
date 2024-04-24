@@ -1,5 +1,5 @@
 .rocket-list-page {
-  height: 100vh;
+  height: 100%;
   background-image: url("../../assets/img/SpaceBg.png");
   background-size: cover;
 
@@ -104,20 +104,68 @@
       }
     }
 
-    .carousel__icon {
-      color: white;
+    // .carousel__icon {
+    //   color: white;
+    //   font-size: 50px;
+    // }
+
+    .carousel__prev,
+    .carousel__next {
+      text-align: center;
       font-size: 50px;
+      padding: 0;
+      color: #d1c5c585;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border: 0;
+      cursor: pointer;
+      margin: 0 10px;
     }
 
     .carousel__next {
       width: 100px;
       margin-right: 20%;
+
+      @media (max-width: 1500px) {
+        margin-right: 7%;
+      }
+      @media (max-width: 992px) {
+        margin-right: 5%;
+      }
+      @media (max-width: 768px) {
+        margin-right: 3%;
+      }
+      @media (max-width: 576px) {
+        margin-right: 1%;
+      }
     }
+
     .carousel__prev {
       width: 100px;
       margin-left: 20%;
+
+      @media (max-width: 1500px) {
+        margin-left: 7%;
+      }
+      @media (max-width: 992px) {
+        margin-left: 5%;
+      }
+      @media (max-width: 768px) {
+        margin-left: 3%;
+      }
+      @media (max-width: 576px) {
+        margin-left: 1%;
+      }
     }
 
+    @media (hover: hover) {
+      .carousel__prev:hover,
+      .carousel__next:hover {
+        color: whitesmoke;
+      }
+    }
     .carousel__pagination-button::after {
       background-color: #d1c5c585;
     }
@@ -139,6 +187,11 @@
       margin: 10px 0 0;
       padding: 0;
     }
+
+    @media (hover: hover) {
+      .carousel__pagination-button:hover::after {
+        background-color: whitesmoke;
+      }
+    }
   }
 }
-

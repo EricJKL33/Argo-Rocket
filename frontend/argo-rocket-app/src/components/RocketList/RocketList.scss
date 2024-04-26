@@ -1,6 +1,27 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .rocket-list-page {
-  height: 100%;
+  height: 100vh;
   background-image: url("../../assets/img/SpaceBg.png");
+  overflow: auto;
   background-size: cover;
 
   h1 {
@@ -8,6 +29,7 @@
     font-weight: 600;
     margin-bottom: 40px;
     text-align: center;
+    animation: fadeIn 1s ease-out;
   }
   .toggle-btn {
     display: block;
@@ -29,6 +51,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    animation: slideIn 1s ease-out;
   }
 
   .toggle-btn:hover {
@@ -42,6 +65,7 @@
   }
 
   .rocket-list {
+    animation: fadeIn 1s ease-out;
     .rocket-card-ctn {
       display: flex;
       flex-direction: row-reverse;
@@ -58,6 +82,7 @@
     }
 
     .rocket-info {
+      height: 500px;
       display: flex;
       flex-direction: column;
       width: 430px;
@@ -111,22 +136,14 @@
 
     .carousel__prev,
     .carousel__next {
-      text-align: center;
       font-size: 50px;
       padding: 0;
       color: #d1c5c585;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      border: 0;
-      cursor: pointer;
-      margin: 0 10px;
     }
 
     .carousel__next {
       width: 100px;
-      margin-right: 20%;
+      margin-right: 22%;
 
       @media (max-width: 1500px) {
         margin-right: 7%;
@@ -144,7 +161,7 @@
 
     .carousel__prev {
       width: 100px;
-      margin-left: 20%;
+      margin-left: 22%;
 
       @media (max-width: 1500px) {
         margin-left: 7%;
@@ -168,15 +185,16 @@
     }
     .carousel__pagination-button::after {
       background-color: #d1c5c585;
+      width: 15px;
+      height: 7px;
+      border-radius: 2px;
     }
     .carousel__pagination-button--active::after {
       background-color: white;
     }
-    // .carousel__pagination-button::hover {
-    //   background-color: white;
-    // }
+
     .carousel__pagination-button {
-      width: 25px;
+      width: 30px;
     }
 
     .carousel__pagination {

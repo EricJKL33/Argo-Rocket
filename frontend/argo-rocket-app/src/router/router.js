@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import RocketList from "./components/RocketList/RocketList.vue";
-import SignIn from "./components/Signin/SignIn.vue";
+import RocketList from "../components/RocketList/RocketList.vue";
+import SignIn from "../components/Signin/SignIn.vue";
+import authMiddleware from "./middleware";
 
 const routes = [
   {
@@ -12,6 +13,7 @@ const routes = [
     path: "/rockets",
     name: "home",
     component: RocketList,
+    meta: { requiresAuth: true },
   },
 ];
 
@@ -20,5 +22,6 @@ const router = createRouter({
   routes,
 });
 
+router.beforeEach(authMiddleware);
 
 export default router;

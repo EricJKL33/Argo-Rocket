@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
+import router from './router/router';
 import Toast from "vue3-toastify";
 import "./assets/reset.css";
 

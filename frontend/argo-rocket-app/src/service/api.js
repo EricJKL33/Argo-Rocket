@@ -6,7 +6,7 @@ async function postUser(username, password) {
       username: username,
       password: password,
     });
-    console.log(res);
+    localStorage.setItem('user-token', res.data.token);
     return res;
   } catch (err) {
     console.log(err);

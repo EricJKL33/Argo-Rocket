@@ -7,8 +7,8 @@ import User from "./models/User.js";
 mongoose.connect(`${process.env.MONGODB_URL}`);
 
 const user = {
-  username: "testUser",
-  password: "testPassword",
+  username: "AeroTechFanatic",
+  password: "SpacePassion2024",
 };
 
 const rockets = [

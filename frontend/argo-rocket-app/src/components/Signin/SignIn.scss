@@ -1,10 +1,9 @@
-
 .signin-ctn {
   width: 100vw;
   height: 100vh;
 
   background-image: url("../../assets/img/LoginBg.png");
-  overflow:auto;
+  overflow: auto;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -71,11 +70,13 @@
   cursor: pointer;
   border-radius: 4px;
   font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .submit-btn:hover {
   background-color: #ab80ec;
   color: black;
+  transform: scale(1.05);
 }
 
 .input-wrapper {

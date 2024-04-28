@@ -1,10 +1,11 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const bcrypt = require("bcrypt");
-const express = require("express");
+import bcrypt from "bcrypt";
+import express from "express";
 const router = express.Router();
-const User = require("../models/User");
-const jwt = require("jsonwebtoken");
+import User from "../models/User.js";
+import jwt from "jsonwebtoken";
 
 router.post("/signin", async (req, res) => {
   const { username, password } = req.body;
@@ -16,7 +17,7 @@ router.post("/signin", async (req, res) => {
     if (!user || !isMatch) {
       return res
         .status(401)
-        .json({ message: "Invalid username or passworddddd" });
+        .json({ message: "Invalid username or password" });
     }
 
     const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY, {
@@ -28,4 +29,18 @@ router.post("/signin", async (req, res) => {
   }
 });
 
-module.exports = router;
+
+router.get("/username/:id", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json({ username: user.username });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+export default router;
+

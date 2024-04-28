@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
+import Rocket from "../models/Rocket.js";
 const router = express.Router();
-const Rocket = require("../models/Rocket");
 
 router.get("/", async (req, res) => {
   try {
@@ -11,4 +11,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const RocketSchema = new mongoose.Schema({
   name: {
@@ -27,4 +27,4 @@ const RocketSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Rocket", RocketSchema);
+export default mongoose.model("Rocket", RocketSchema);

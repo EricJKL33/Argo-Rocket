@@ -1,7 +1,8 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
-const Rocket = require("./models/Rocket");
-const User = require("./models/User");
+import dotenv from "dotenv";
+dotenv.config();
+import mongoose from "mongoose";
+import Rocket from "./models/Rocket.js";
+import User from "./models/User.js";
 
 mongoose.connect(`${process.env.MONGODB_URL}`);
 

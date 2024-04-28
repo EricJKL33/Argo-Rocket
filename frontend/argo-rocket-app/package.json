@@ -7,7 +7,6 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "electron:build": "node --openssl-legacy-provider ./node_modules/.bin/vue-cli-service electron:build",
-
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
@@ -15,8 +14,10 @@
   "main": "background.js",
   "dependencies": {
     "@electron/remote": "^2.1.2",
+    "@vueuse/core": "^10.9.0",
     "axios": "^1.6.8",
     "core-js": "^3.8.3",
+    "jwt-decode": "^4.0.0",
     "lucide-vue-next": "^0.368.0",
     "vue": "^3.2.13",
     "vue-router": "^4.3.0",

@@ -1,12 +1,13 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const express = require("express");
-const mongoose = require("mongoose");
-const authRoutes = require("./routes/auth.js");
-const rocketRoutes = require("./routes/rocket.js");
+import express from "express";
+import mongoose from "mongoose";
+import authRoutes from "./routes/auth.js";
+import rocketRoutes from "./routes/rocket.js";
+import cors from "cors";
 
 const app = express();
-const cors = require("cors");
 
 const corsOrigin = process.env.CORS_ORIGIN;
 const mongoDbUrl = process.env.MONGODB_URL;

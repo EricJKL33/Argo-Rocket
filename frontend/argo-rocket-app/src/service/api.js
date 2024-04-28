@@ -13,6 +13,15 @@ async function postUser(username, password) {
   }
 }
 
+async function getUser(id) {
+  try {
+    const res = await axios.get(`http://localhost:3000/user/username/${id}`);
+    return res.data.username;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 async function getRockets() {
   try {
     return await axios.get("http://localhost:3000/rocket");
@@ -24,4 +33,5 @@ async function getRockets() {
 export default {
   postUser,
   getRockets,
+  getUser,
 };
